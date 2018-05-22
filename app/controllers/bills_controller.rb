@@ -1,23 +1,23 @@
 class BillsController < ApplicationController
 	def index
-		@bills=Bill.all
+		@bills = Bill.all
 	end
-	def new 
-		@bill=Bill.new
-	end
-	def create
-		binding.pry
 
+	def new
+		@bill = Bill.new
+		@bill.recipients.build
+		@bill.recipients.build
 	end
-	def create
+
+	def create 
 		if Bill.create(bill_params)
-			redirect_to action: :index
-		else
+		redirect_to action: :index
+		else 
 			render :new
-		end
-	end
-	def bill_params
-		params.require(:bill).permit(:name,:price,:description,:bank_account)
+		end	
 	end
 
+	def bill_params
+		params.require(:bill).permit(:name, :price, :description, :bank_account, recipienrs_attributes: [:name, :email])
+	end
 end

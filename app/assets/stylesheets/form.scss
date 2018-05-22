@@ -1,37 +1,38 @@
+$input-height: 30px;
 $inner-spacing: .9em;
-.form {
-  // $input-height: 30px;
-  $inner-spacing: .9em;
+$heading_color: #252525;
 
-  display: flex;
+.form {
+  display:flex;
   flex-direction: column;
 }
 
 .form__part + .form__part {
   margin-top: calc(3 * #{$inner-spacing});
-
 }
 
 .form__heading {
-  margin:0,0,0,$inner-spacing;
+  margin: 0, 0, 0, $inner-spacing;
+  font-size: 1.4rem;
+  color: $heading_color;
 }
-.from__part-flex{
-   display: flex;
-  flex: column;
+
+.form__part--flex {
+  display:flex;
+  flex-direction:column;
 }
 
 .form__field-wrapper {
-border:1px solid lavender;
-margin-top: $inner-spacing;
+  margin: $inner-spacing 0;
 }
+
 .form__icon {
   width: 30px;
-  height: auto;
-  display: none;
+  display:none;
 }
 
 .form__label {
-margin-bottom: .9em;
+  padding: .9em;
 }
 
 .form__input {
@@ -39,7 +40,7 @@ margin-bottom: .9em;
 }
 
 .form__input::placeholder {
-  
+  //
 }
 
 .form__input:active,
@@ -48,8 +49,8 @@ margin-bottom: .9em;
 }
 
 .form__field {
-display: flex;
-  flex: column;
+  display:flex;
+  flex-direction:column;
 }
 
 .form__field + .form__field {
@@ -61,7 +62,7 @@ display: flex;
 }
 
 .form__actions {
-    margin-top: calc(3 * #{$inner-spacing});
+  margin-top: calc(3 * #{$inner-spacing});
 }
 
 @media (min-width: 600px) {
@@ -74,16 +75,15 @@ display: flex;
   }
 
   .form__field-wrapper {
-    width: 100%;
-
-  }
-
-  .form__field-wrapper--spaced {
     //
   }
 
+  .form__field-wrapper--spaced {
+    width: 100%;
+  }
+
   .form__field-wrapper--spaced + .form__field-wrapper--spaced {
-margin-left: 20px;
+    margin-left: 20px;
   }
 
   .form__field {
